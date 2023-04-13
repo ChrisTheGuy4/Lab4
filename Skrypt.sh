@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" = "--init" ]; then
-	git clone https://github.com/BreadEnthusiast/Lab4
+	git clone https://github.com/ChrisTheGuy4/Lab4
 	export PATH=$PATH:$(pwd)
 elif [[ "$1" = "--date" || "$1" = "-d" ]]; then
 	echo "Dzisiejsza data: $(date +%Y-%m-%d)"
