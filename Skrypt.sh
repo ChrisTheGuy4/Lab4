@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ "$1" = "--date" ]; then
+if [[ "$1" = "--date" || "$1" = "-d" ]]; then
 	echo "Dzisiejsza data: $(date +%Y-%m-%d)"
-elif [ "$1" = "--logs" ]; then
+elif [[ "$1" = "--logs" || "$1" = "-l" ]]; then
 	if [ -z "$2" ]; then
-		echo "Użycie: $0 --logs <liczba plików>"
+		echo "Użycie: $0 --logs <liczba plików> | -l <liczba plików>"
 	else
 		num_logs=$2
 		for i in $(seq 1 $num_logs); do
@@ -13,11 +13,11 @@ elif [ "$1" = "--logs" ]; then
 		done
 		echo "Utworzono $num_logs plików logx.txt"
 	fi
-elif [ "$1" = "--help" ]; then
-	echo "Użycie: $0 --date | --logs <liczba plików> | --help"
-	echo "  --date               Wyświetla dzisiejszą datę."
-	echo "  --logs <liczba plików> Tworzy określoną liczbę plików logx.txt."
-	echo "  --help               Wyświetla krótką pomoc."
+elif [[ "$1" = "--help" || "$1" = "-h" ]]; then
+  echo "Użycie: $0 --date | --logs <liczba plików> | --help"
+  echo "  --date lub -d                 Wyświetla dzisiejszą datę."
+  echo "  --logs lub -l <liczba plików> Tworzy określoną liczbę plików logx.txt."
+  echo "  --help lub -h                 Wyświetla krótką pomoc."
 else
-	echo "Użycie: $0 --date | --logs <liczba plików> | --help"
+  echo "Użycie: $0 --date | -d | --logs <liczba plików> | -l <liczba plików> | --help | -h"
 fi
