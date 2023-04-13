@@ -13,6 +13,11 @@ elif [ "$1" = "--logs" ]; then
 		done
 		echo "Utworzono $num_logs plików logx.txt"
 	fi
+elif [ "$1" = "--help" ]; then
+	echo "Użycie: $0 --date | --logs <liczba plików> | --help"
+	echo "  --date               Wyświetla dzisiejszą datę."
+	echo "  --logs <liczba plików> Tworzy określoną liczbę plików logx.txt."
+	echo "  --help               Wyświetla krótką pomoc."
 else
-	echo "Użycie: $0 --date | --logs <liczba plików>"
+	echo "Użycie: $0 --date | --logs <liczba plików> | --help"
 fi
